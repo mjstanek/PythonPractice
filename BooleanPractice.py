@@ -53,4 +53,3 @@ elif year%100 == 0:
         print('This is a leap year with 366 days.')   
 else:
     print('This is a leap year with 366 days.')
-    
