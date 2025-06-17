@@ -159,6 +159,10 @@ for number in list_to_check:
 
 # Removing duplicates from a list
 my_list = [1, 2, 4, 4, 1, 4, 2, 6, 2, 9]
+
+# Option 1
+# Using a secondary list to store deletion indices
+my_list = [1, 2, 4, 4, 1, 4, 2, 6, 2, 9]
 delete_indicies = []
 
 for number in range(len(my_list) - 1):
@@ -168,5 +172,18 @@ for number in range(len(my_list) - 1):
 
 for index in reversed(delete_indicies):
     del my_list[index]
+
+print("List after removing duplicates:", my_list)
+
+# Option 2
+# Maintaining a single list
+my_list = [1, 2, 4, 4, 1, 4, 2, 6, 2, 9]
+index = len(my_list) - 1
+
+for number in range(len(my_list) - 1):
+    # print('number:', number, 'value:', my_list[number])
+    if my_list[index] in my_list[:index]:
+        del my_list[index]
+    index -= 1
 
 print("List after removing duplicates:", my_list)
