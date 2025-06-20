@@ -52,9 +52,13 @@ def display_board(board):
     print("Here's the updated board:")
 
     for row in board:
-        print(" | ".join(row))
+        if row == board[0]:
+            print(' +---+---+---+')
+        print(" |" ," | ".join(row), "|")
         if row != board[2]:
-            print('--+---+---')
+            print(' +---+---+---+')
+        if row == board[2]:
+            print(' +---+---+---+')
 
     enter_move(board)
 
